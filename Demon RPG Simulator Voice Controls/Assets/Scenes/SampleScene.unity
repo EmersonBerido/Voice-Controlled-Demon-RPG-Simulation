@@ -442,6 +442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 540555916}
+  - component: {fileID: 540555917}
   m_Layer: 5
   m_Name: PlayerButtons
   m_TagString: Untagged
@@ -475,6 +476,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &540555917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540555915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afdde59c77bd58240adf66469d0adf0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CombatWheel
+  AttackButton: {fileID: 1367287993}
+  SkillButton: {fileID: 1014408327}
+  BagButton: {fileID: 1967394149}
+  PartyButton: {fileID: 1532100122}
+  PersonaButton: {fileID: 1869234597}
+  GuardButton: {fileID: 1165362841}
+  RunButton: {fileID: 1103154505}
+  AdvanceAction: {fileID: -364122883532942831, guid: 8deec53ffd0ffa5438c6ed33bb3a1960, type: 3}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
