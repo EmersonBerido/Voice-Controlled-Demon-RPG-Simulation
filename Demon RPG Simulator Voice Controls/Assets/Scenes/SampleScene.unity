@@ -647,7 +647,7 @@ MonoBehaviour:
   PersonaButton: {fileID: 1869234597}
   GuardButton: {fileID: 1165362841}
   RunButton: {fileID: 1103154505}
-  PlayerActionsUI: {fileID: 702800023}
+  PlayerActionsUI: {fileID: 540555915}
   ActionDescriptionText: {fileID: 1849769650}
   ActionNameText: {fileID: 915519454}
   AdvanceAction: {fileID: -364122883532942831, guid: 8deec53ffd0ffa5438c6ed33bb3a1960, type: 3}
@@ -1908,6 +1908,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367287993}
   m_CullTransparentMesh: 1
+--- !u!1 &1423271412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423271414}
+  - component: {fileID: 1423271413}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1423271413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423271412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67348b0d19e01d94d812a9a3ba6f632d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DemonParty
+  Demons: []
+--- !u!4 &1423271414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423271412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 337.9879, y: 53.3916, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532100122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,6 +2089,222 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532100122}
   m_CullTransparentMesh: 1
+--- !u!1 &1555581729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555581731}
+  - component: {fileID: 1555581730}
+  m_Layer: 0
+  m_Name: Pixie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1555581730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555581729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03af7208c79427c49a5c9d8afa9dc1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Demon
+  demonName: Pixie
+  demonSprite: {fileID: -1904988484476000161, guid: 6e048fc9d90ff1d46afc99868d50d983, type: 3}
+  stats:
+    strength: 5
+    magic: 3
+    endurance: 3
+    agility: 4
+    luck: 2
+    sp: 14
+    hp: 174
+  weaknesses: 0200000006000000
+  resistances: 0500000003000000
+  immunities: 
+  skills:
+  - skillName: Shock
+    description: Light Electric damage to 1 enemy.
+    type: 3
+    weight: 1
+    modifier: 0
+    accuracy: 0
+  - skillName: Heal
+    description: Restore Light amount of HP to self.
+    type: 10
+    weight: 1
+    modifier: 0
+    accuracy: 0
+  - skillName: Attack Up
+    description: Increase Attack power of self for 3 turns.
+    type: 8
+    weight: 0
+    modifier: 1
+    accuracy: 0
+--- !u!4 &1555581731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555581729}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2028458820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1584428538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1584428540}
+  - component: {fileID: 1584428539}
+  m_Layer: 0
+  m_Name: Jackfrost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1584428539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584428538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03af7208c79427c49a5c9d8afa9dc1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Demon
+  demonName: Jack Frost
+  demonSprite: {fileID: 2427109395936554849, guid: 6e048fc9d90ff1d46afc99868d50d983, type: 3}
+  stats:
+    strength: 8
+    magic: 9
+    endurance: 7
+    agility: 9
+    luck: 7
+    sp: 99
+    hp: 214
+  weaknesses: 
+  resistances: 
+  immunities: 
+  skills:
+  - skillName: Bufu
+    description: Light Ice damage to 1 foes.
+    type: 2
+    weight: 1
+    modifier: 0
+    accuracy: 0
+  - skillName: Mabufu
+    description: Light Ice damage to all foes.
+    type: 2
+    weight: 1
+    modifier: 0
+    accuracy: 0
+  - skillName: Rakunda
+    description: Decrease Defense of one enemy for 3 turns.
+    type: 9
+    weight: 1
+    modifier: 2
+    accuracy: 0
+--- !u!4 &1584428540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584428538}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2028458820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1619852547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619852549}
+  - component: {fileID: 1619852548}
+  m_Layer: 0
+  m_Name: tkpg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1619852548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619852547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03af7208c79427c49a5c9d8afa9dc1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Demon
+  demonName: TKPG
+  demonSprite: {fileID: -8455267037171962903, guid: 6e048fc9d90ff1d46afc99868d50d983, type: 3}
+  stats:
+    strength: 0
+    magic: 0
+    endurance: 0
+    agility: 0
+    luck: 0
+    sp: 0
+    hp: 0
+  weaknesses: 0000000000000000
+  resistances: 
+  immunities: 
+  skills:
+  - skillName: 
+    description: 
+    type: 0
+    weight: 0
+    modifier: 0
+    accuracy: 0
+--- !u!4 &1619852549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619852547}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2028458820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1639169228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2604,6 +2865,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967394149}
   m_CullTransparentMesh: 1
+--- !u!1 &2028458819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028458820}
+  m_Layer: 0
+  m_Name: DemonList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028458820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028458819}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 337.9879, y: 53.3916, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1619852549}
+  - {fileID: 1555581731}
+  - {fileID: 1584428540}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2612,3 +2907,5 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 408882875}
   - {fileID: 1095023504}
+  - {fileID: 1423271414}
+  - {fileID: 2028458820}

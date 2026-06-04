@@ -66,16 +66,13 @@ public class CombatWheel : MonoBehaviour
         {
             buttonPositions.Add(actionButton.buttonObject.GetComponent<RectTransform>().anchoredPosition);
         }
-        // foreach (GameObject button in buttons)
-        // {
-        //     buttonPositions.Add(button.GetComponent<RectTransform>().anchoredPosition);
-        // }
 
-
-
-
-
-
+        // update initial button
+        Button selectedButton = actionWheelButtons[selectedButtonIndex].buttonObject.GetComponent<Button>(); // Get the currently selected
+        selectedButton.Select(); // Select the new main button
+        ActionNameText.GetComponent<TMP_Text>().text = actionWheelButtons[selectedButtonIndex].actionName;
+        ActionDescriptionText.GetComponent<TMP_Text>().text = actionWheelButtons[selectedButtonIndex].description;
+      
     }
 
     void Update()
