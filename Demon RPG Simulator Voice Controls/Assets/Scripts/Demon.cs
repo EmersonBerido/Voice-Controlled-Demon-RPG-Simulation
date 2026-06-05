@@ -11,6 +11,17 @@ public class Stats
   public int luck;
   public int sp;
   public int hp;
+
+  public Stats(Stats other)
+  {
+    strength = other.strength;
+    magic = other.magic;
+    endurance = other.endurance;
+    agility = other.agility;
+    luck = other.luck;
+    sp = other.sp;
+    hp = other.hp;
+  }
 }
 public class Demon : MonoBehaviour
 {
@@ -24,6 +35,21 @@ public class Demon : MonoBehaviour
   private int attackDuration = 0; // negative if debuff, positive if both (max: 3/-3)
   private int defenseDuration = 0; // negative if debuff, positive if both (max: 3/-3)
   private int accuracyDuration = 0; // negative if debuff, positive if both (max: 3/-3)
+  private bool isGuarding = false;
+
+  public Demon() { }
+
+  // Copy constructor
+  public Demon(Demon other)
+  {
+    demonName = other.demonName;
+    demonSprite = other.demonSprite;
+    stats = new Stats(other.stats); 
+    weaknesses = new List<Type>(other.weaknesses);
+    resistances = new List<Type>(other.resistances);
+    immunities = new List<Type>(other.immunities);
+    skills = new List<Skills>(other.skills);
+  }
 
   /***
   * Processes skill and returns damage dealt or healing done
@@ -40,6 +66,8 @@ public class Demon : MonoBehaviour
         DamageWeight.Heavy => GLOBAL.HEAVY_HEAL,
         _ => 0,
       };
+
+      isGuarding = false; // Remove guard if healed
 
       stats.hp += healAmt;
       return healAmt;
@@ -58,6 +86,7 @@ public class Demon : MonoBehaviour
           accuracyDuration = accuracyDuration < 0 ? 0 : 3; // Increase accuracy for next 3 turns
           break;
       }
+      isGuarding = false; // Remove guard if buffed
       return 0;
     }
     else if (skill.type == Type.Debuff)
@@ -74,6 +103,7 @@ public class Demon : MonoBehaviour
           accuracyDuration = accuracyDuration > 0 ? 0 : -3; // Increase accuracy for next 3 turns
           break;
       }
+      isGuarding = false; // Remove guard if debuffed
       return 0;
     }
 
@@ -126,6 +156,16 @@ public class Demon : MonoBehaviour
       defenseDuration += defenseDuration > 0 ? -1 : 1; // Decrease duration each turn
     }
 
+    // apply reduction if guarded
+    if (isGuarding)
+    {
+      damage = Mathf.RoundToInt(damage * 0.5f); // Guarding reduces damage by 50%
+      isGuarding = false; // Reset guarding state after one attack
+    }
+
+    // alert if death (battle mangager's RemoveEnemyDemon)
+
+    Debug.Log($"{demonName} took {damage} damage from {skill.skillName}! Actual health isnt affected yet");
     return damage; // Return for ui/player feedback and so i can ctrl c v this to player demon
   }
 }
