@@ -1954,6 +1954,8 @@ MonoBehaviour:
   PlayerActionsUI: {fileID: 540555915}
   ActionDescriptionText: {fileID: 1849769650}
   ActionNameText: {fileID: 915519454}
+  CombatUI: {fileID: 408882871}
+  SwapDemonUI: {fileID: 133296287}
   AdvanceAction: {fileID: -364122883532942831, guid: 8deec53ffd0ffa5438c6ed33bb3a1960, type: 3}
 --- !u!1 &542610674
 GameObject:
@@ -6981,7 +6983,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1869234601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 540555917}
+        m_TargetAssemblyTypeName: CombatWheel, Assembly-CSharp
+        m_MethodName: EnableSwapDemonUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1869234601
 MonoBehaviour:
   m_ObjectHideFlags: 0

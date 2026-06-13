@@ -27,10 +27,14 @@ public class CombatWheel : MonoBehaviour
     [SerializeField] private GameObject GuardButton;
     [SerializeField] private GameObject RunButton;
 
-    [Header("Display References")]
+    [Header("Combat Display References")]
     [SerializeField] private GameObject PlayerActionsUI; // Parent display
     [SerializeField] private GameObject ActionDescriptionText; // Text element to show action descriptions
     [SerializeField] private GameObject ActionNameText; // Text element to show action names
+
+    [Header("Other Display References")]
+    [SerializeField] private GameObject CombatUI;
+    [SerializeField] private GameObject SwapDemonUI;
 
 
     // Button format
@@ -42,8 +46,12 @@ public class CombatWheel : MonoBehaviour
 
     public InputActionReference AdvanceAction; // axis input
 
-    void OnEnable() => AdvanceAction.action.Enable();
-    void OnDisable() => AdvanceAction.action.Disable();
+    void OnEnable() {
+        AdvanceAction.action.Enable();
+    }
+    void OnDisable() {
+        AdvanceAction.action.Disable();
+    }
 
 
     void Start()
@@ -85,7 +93,7 @@ public class CombatWheel : MonoBehaviour
             // int currentValue = (int)AdvanceAction.action.ReadValue<float>();
             // Debug.Log("Current Value: " + currentValue);
             UpdateButtonLayout();
-        }
+        } 
     }
 
     void UpdateButtonLayout()
@@ -145,6 +153,13 @@ public class CombatWheel : MonoBehaviour
             initialPosition = tempPosition; // Update initial position for the next iteration
         }
         selectedButtonIndex = (selectedButtonIndex + 1) % actionWheelButtons.Count; // Update the selected button index
+    }
+
+    /* BUTTON METHODS */
+    public void EnableSwapDemonUI()
+    {
+        SwapDemonUI.SetActive(true);
+        CombatUI.SetActive(false);
     }
 
 }
