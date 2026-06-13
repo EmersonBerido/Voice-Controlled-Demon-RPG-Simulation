@@ -21,10 +21,10 @@ public class Player : Demon
         {
             Debug.LogError("current party is null");
         }
-        for (int i = 0; i < demonParty.GetCurrentParty().Length; i++)
-        {
-            SwitchDemon(demonParty.GetCurrentParty()[i]); // test
-        }
+        // for (int i = 0; i < demonParty.GetCurrentParty().Length; i++)
+        // {
+        //     SwitchDemon(demonParty.GetCurrentParty()[i]); // test
+        // }
         SwitchDemon(demonParty.GetCurrentParty()[0]);
     }
 
