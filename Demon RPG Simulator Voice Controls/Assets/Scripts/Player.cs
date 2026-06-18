@@ -26,6 +26,54 @@ public class Player : Demon
         //     SwitchDemon(demonParty.GetCurrentParty()[i]); // test
         // }
         SwitchDemon(demonParty.GetCurrentParty()[0]);
+
+        // testing modifier
+        Demon testAttacker = new Demon(demonParty.GetCurrentDemon());
+        testAttacker.stats.strength = 30;
+        if (testAttacker == null)
+            Debug.LogError("testAttacker is null");
+        Skills testModifierAttack = new Skills
+        {
+            skillName = "Attack Up",
+            description = "Attack increased for 3 turns",
+            type = Type.Buff,
+            weight = DamageWeight.None,
+            modifier = Modifier.Attack,
+            accuracy = 100
+        };
+        // test attacker has attack increased for 3 turns
+        testAttacker.ReceiveSkill(testModifierAttack, null);
+        if (testAttacker.attackDuration == 0)
+            Debug.LogError("Test Attacker's attack hasn't been increased. It's at " + testAttacker.attackDuration);
+
+        // testing damage
+        Skills REGULAR_ATTACK = new Skills
+        {
+        skillName = "Attack",
+        description = "Light Physical damage to 1 foe",
+        type = Type.Physical,
+        weight = DamageWeight.Light,
+        modifier = Modifier.None,
+        accuracy = 95
+        };
+
+        // first hit, increased
+        int damage = demonParty.GetCurrentDemon().ReceiveSkill(REGULAR_ATTACK, testAttacker);
+        Debug.Log($"1) The demon {demonParty.GetCurrentDemon().demonName} wouldve taken {damage} damage");
+
+        // second hit, increased
+        damage = demonParty.GetCurrentDemon().ReceiveSkill(REGULAR_ATTACK, testAttacker);
+        Debug.Log($"2) The demon {demonParty.GetCurrentDemon().demonName} wouldve taken {damage} damage");
+
+        // third hit, increased
+        damage = demonParty.GetCurrentDemon().ReceiveSkill(REGULAR_ATTACK, testAttacker);
+        Debug.Log($"3) The demon {demonParty.GetCurrentDemon().demonName} wouldve taken {damage} damage");
+
+        // fourth hit, normal
+        if (testAttacker.attackDuration != 0)
+            Debug.LogError("Test Attacker's attack hasn't been reset to 0. It's at " + testAttacker.attackDuration);
+        damage = demonParty.GetCurrentDemon().ReceiveSkill(REGULAR_ATTACK, testAttacker);
+        Debug.Log($"4) The demon {demonParty.GetCurrentDemon().demonName} wouldve taken {damage} damage");
     }
 
     /* SWAP DEMON METHOD */

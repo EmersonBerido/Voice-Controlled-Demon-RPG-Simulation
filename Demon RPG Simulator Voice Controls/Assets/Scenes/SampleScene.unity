@@ -4955,6 +4955,7 @@ MonoBehaviour:
   resistances: 
   immunities: 
   skills: []
+  attackDuration: 0
   demonParty: {fileID: 1423271413}
   MAX_HEALTH: 100
   MAX_SP: 50
@@ -5689,8 +5690,8 @@ MonoBehaviour:
   resistances: 0500000003000000
   immunities: 
   skills:
-  - skillName: Shock
-    description: Light Electric damage to 1 enemy.
+  - skillName: Blow
+    description: Light Air damage to 1 enemy.
     type: 3
     weight: 1
     modifier: 0
@@ -5707,6 +5708,7 @@ MonoBehaviour:
     weight: 0
     modifier: 1
     accuracy: 0
+  attackDuration: 0
 --- !u!4 &1555581731
 Transform:
   m_ObjectHideFlags: 0
@@ -5959,6 +5961,7 @@ MonoBehaviour:
     weight: 1
     modifier: 2
     accuracy: 0
+  attackDuration: 0
 --- !u!4 &1584428540
 Transform:
   m_ObjectHideFlags: 0
@@ -6023,6 +6026,7 @@ MonoBehaviour:
     weight: 0
     modifier: 0
     accuracy: 0
+  attackDuration: 0
 --- !u!4 &1619852549
 Transform:
   m_ObjectHideFlags: 0

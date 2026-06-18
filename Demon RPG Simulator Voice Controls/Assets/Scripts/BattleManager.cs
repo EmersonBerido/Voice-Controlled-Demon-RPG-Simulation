@@ -1,6 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+/**
+    Handles how enemies take damage
+
+*/
+
 public class BattleManager : MonoBehaviour
 {
     public static BattleManager Instance { get; private set; } // Singleton instance
